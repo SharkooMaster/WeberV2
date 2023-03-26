@@ -1,4 +1,5 @@
 from weberParser import parser
+from weberCompiler import compiler
 import sys
 
 class page:
@@ -17,7 +18,9 @@ x = parser()
 t = ""
 with open(str(sys.argv[1]), "r", encoding='utf-16') as f: 
 	t = f.read()
-x.LR(t)
+_t = x.LR(t)
+c = compiler()
+c.compile(_t)
 
 '''
 global x = 'hello';
