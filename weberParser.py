@@ -3,8 +3,8 @@ from weberToken import token
 class parser:
 	def __init__(self):
 		print("Parsing")
-		self.ops = ["{","}","[","]","(",")","=",";","'",'"',"\n"]
-		self.opsN= ["CBO","CBE","BO","BE","BRO","BRE","EQ","SC", "STR", "STR","LE"]
+		self.ops = ["{","}","[","]","(",")","=",";","'",'"',"\n","<",">"]
+		self.opsN= ["CBO","CBE","BO","BE","BRO","BRE","EQ","SC", "STR", "STR","LE","OPT","CLT"]
 		self.synt= ["global", "local"]
 
 	def LR(self, s):

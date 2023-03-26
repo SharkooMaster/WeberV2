@@ -23,9 +23,16 @@ class compiler:
 			["local", "STRING", "EQ", "STRING", "SC"],
 			["local", "STRING", "EQ", "STRING", "LE"],
 			["local", "STRING", "EQ", "STR", "STRING", "STR", "SC"],
-			["local", "STRING", "EQ", "STR", "STRING", "STR", "LE"]
+			["local", "STRING", "EQ", "STR", "STRING", "STR", "LE"],
+
+			["OPT", "STRING"],
+			["SC", "STRING", "EQ", "STR", "STRING", "STR"],
+			["SC", "STRING", "EQ", "CBO", "STR", "STRING", "STR", "CBE"],
+			["SC", "STRING", "EQ", "CBO", "STRING", "CBE"],
+			["CLT"],
+			["OPT", "STRING", "CLT"],
 		]
-		self.execute = ["null", "cgv", "cgv", "cgv", "cgv", "clv", "clv", "clv", "clv"]
+		self.execute = ["null", "cgv", "cgv", "cgv", "cgv", "clv", "clv", "clv", "clv", "hto", "hta", "hta", "hta", "hta", "htc", "htc"]
 	
 	def compile(self, _t):
 		execArr = []
@@ -44,5 +51,7 @@ class compiler:
 				#Compare to current rule
 				if(_tt == j):
 					execArr.append(exec(self.execute[self.grammar.index(j)], _tv))
+					break
 		for x in execArr:
-			print(f"{x._type}::{x._obj}")
+			if(x._type != "null"):
+				print(f"{x._type}::{x._obj}")
