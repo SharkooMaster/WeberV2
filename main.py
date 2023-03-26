@@ -1,4 +1,6 @@
 from weberParser import parser
+import sys
+
 class page:
 	fileName = ""
 	fileExt = ""
@@ -12,7 +14,10 @@ class page:
 		self.fileContent = _fc
 
 x = parser()
-x.LR("global test = 123;\nlocal test2 = 'hello how';\nfunction(arg){print('asd');}")
+t = ""
+with open(str(sys.argv[1]), "r", encoding='utf-16') as f: 
+	t = f.read()
+x.LR(t)
 
 '''
 global x = 'hello';

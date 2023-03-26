@@ -35,7 +35,7 @@ class parser:
 			stack.clear()
 		ret = []
 		for j in tokens:
-			if(j.value != ""):
+			if(j.value != "" and j.value != " "):
 				ret.append(j)
 				print(f"TOKEN:: {j._type} -> {j.value}")
 		return ret
