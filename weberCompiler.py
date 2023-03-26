@@ -32,7 +32,7 @@ class compiler:
 			["CLT"],
 			["OPT", "STRING", "CLT"],
 		]
-		self.execute = ["null", "cgv", "cgv", "cgv", "cgv", "clv", "clv", "clv", "clv", "hto", "hta", "hta", "hta", "hta", "htc", "htc"]
+		self.execute = ["null", "cgv", "cgv", "cgv", "cgv", "clv", "clv", "clv", "clv", "hto", "hta", "hta", "hta", "htc", "htc"]
 	
 	def compile(self, _t):
 		execArr = []
