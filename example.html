@@ -1,0 +1,16 @@
+
+global a = 0
+local arr = [1,2,3,4,5]
+
+{{
+	def test():
+		ret = 0
+		for i in arr:
+			ret += i
+		return ret
+}}
+
+<div>
+	<? component args="" args2={python(test)} ?>
+	a = input
+</div>

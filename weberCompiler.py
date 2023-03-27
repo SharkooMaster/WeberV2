@@ -14,6 +14,7 @@ class compiler:
 		print("init compiler")
 		self.grammar = [
 			["LE"],
+			["LT"],
 			
 			["global", "STRING", "EQ", "STRING", "SC"],
 			["global", "STRING", "EQ", "STRING", "LE"],
@@ -26,13 +27,29 @@ class compiler:
 			["local", "STRING", "EQ", "STR", "STRING", "STR", "LE"],
 
 			["OPT", "STRING"],
+			["COT", "STRING"],
 			["SC", "STRING", "EQ", "STR", "STRING", "STR"],
 			["SC", "STRING", "EQ", "CBO", "STR", "STRING", "STR", "CBE"],
 			["SC", "STRING", "EQ", "CBO", "STRING", "CBE"],
+
+			["STRING", "EQ", "STR", "STRING", "STR"],
+			
+			["COE"],
 			["CLT"],
+
 			["OPT", "STRING", "CLT"],
+			["COT", "STRING", "COE"],
 		]
-		self.execute = ["null", "cgv", "cgv", "cgv", "cgv", "clv", "clv", "clv", "clv", "hto", "hta", "hta", "hta", "htc", "htc"]
+		self.execute = [
+			"null", "null",
+			
+			"cgv", "cgv","cgv", "cgv",
+			"clv", "clv", "clv", "clv",
+			"hto", "hco", "hta", "hte", "hte",
+			"htas",
+			"hce", "htc",
+			"htc", "hce"
+		]
 	
 	def compile(self, _t):
 		execArr = []
